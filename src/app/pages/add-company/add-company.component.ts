@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './add-company.component.css'
 })
 export class AddCompanyComponent {
+  tabs = ["Company Info","Shares Info","Directors","Company Secretary"];
+  currentTabIndex = 0;
 
+  changeTab(index: number){
+     this.currentTabIndex = index  
+  }
 }
