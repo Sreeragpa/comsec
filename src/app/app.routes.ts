@@ -9,29 +9,42 @@ import { ProjectIncorporationsComponent } from './pages/project-incorporations/p
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
-    {
-        path: '', component: LoginComponent
-    },
-    {
-        path: 'login', component: LoginComponent
-    },
-    {
-        path: 'user-dashboard', component: UserDashboardComponent
-    },
-    {
-        path: 'add-company', component: AddCompanyComponent
-    },
-    {
-        path: 'summary', component: SummaryComponent
-    },
-    {
-        path: 'document-status', component: DocumentStatusComponent
-    },
-    {
-        path: 'project-incorp', component: ProjectIncorporationsComponent
-    },
-    {
-        path: 'admin-dashboard', component: AdminDashboardComponent
-    },
-
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    component: MainFrameComponent,
+    children: [
+      {
+        path: 'user-dashboard',
+        component: UserDashboardComponent,
+      },
+      {
+        path: 'add-company',
+        component: AddCompanyComponent,
+      },
+      {
+        path: 'summary',
+        component: SummaryComponent,
+      },
+      {
+        path: 'document-status',
+        component: DocumentStatusComponent,
+      },
+      {
+        path: 'project-incorp',
+        component: ProjectIncorporationsComponent,
+      },
+      {
+        path: 'admin-dashboard',
+        component: AdminDashboardComponent,
+      },
+    ],
+  },
 ];
