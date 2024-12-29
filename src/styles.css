@@ -18,14 +18,46 @@ body {
     font-family: 'comsecfont', sans-serif;
 } */
 
+
+
 form input:focus, form textarea:focus, form select:focus {
     /* outline: none !important;
     box-shadow: none !important; */
-    outline: none;
+    outline: 2px solid #000000 !important;
     box-shadow: none !important;
-    border: 2px solid #000000 !important;  
+    border: none !important;  
+    background-color: transparent !important;
 }
 
+input[type="radio"] {
+    background-color: transparent !important;
+
+}
+
+
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+/* Create a circular radio button */
+.custom-radio span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    top: 1px;
+}
+
+/* Add the white dot when selected */
+.custom-radio input[type="radio"]:checked + span {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: inset 0 0 0 4px black; /* Creates the white background with black inner dot */
+}
 
 
 
@@ -45,3 +77,24 @@ form input:focus, form textarea:focus, form select:focus {
     background: white;
     color: black;
 }
+
+::ng-deep .p-select {
+    background-color: white !important;
+    color: black !important;
+}
+
+::ng-deep .p-select .p-dropdown-panel {
+    background-color: white !important;
+    color: black !important;
+}
+
+::ng-deep .p-select .p-dropdown-item {
+    background-color: white !important;
+    color: black !important;
+}
+
+::ng-deep .p-select .p-dropdown-item:hover {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+}
+
