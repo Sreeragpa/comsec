@@ -26,25 +26,27 @@
                 Account User
             </div>
             <form
-              action="#"
-              method="POST"
+              [formGroup]="loginForm"
+              (ngSubmit)="onlogin()"
               class="mx-auto mt-4 max-w-xl sm:mt-4"
             >
               <div class="">
                 <div>
                   <label
-                    for="first-name"
+                    for="first-name" 
                     class="block text-sm/6 font-semibold text-gray-900"
                     >Email</label
                   >
                   <div class="mt-1">
-                    <input
-                      type="text"
-                      name="first-name"
-                      id="first-name"
-                      autocomplete="given-name"
+                    <input pInputText
+                      type="email"
+                      formControlName="email"
                       placeholder="xyz@gmail.com"
-                      class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-black"
+                      class="w-full"
+                      [ngClass]="{
+                        'ng-invalid': loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty),
+                        'ng-dirty': loginForm.get('email')?.dirty
+                      }"
                     />
                   </div>
                 </div>
@@ -56,12 +58,15 @@
                   >
                   <div class="mt-1">
                     <input
-                      type="text"
-                      name="last-name"
-                      id="Password"
-                      autocomplete="family-name"
+                      pInputText
+                      type="password"
+                      formControlName="password"
                       placeholder="********"
-                      class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-black"
+                      class="w-full"
+                      [ngClass]="{
+                        'ng-invalid': loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty),
+                        'ng-dirty': loginForm.get('password')?.dirty
+                      }"
                     />
                   </div>
                 </div>
