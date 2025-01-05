@@ -42,12 +42,13 @@
                       type="email"
                       formControlName="email"
                       placeholder="xyz@gmail.com"
-                      class="w-full"
+                      class="w-full "
                       [ngClass]="{
-                        'ng-invalid': loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty),
-                        'ng-dirty': loginForm.get('email')?.dirty
+                        'input-error': loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty),
                       }"
                     />
+                <p class="h-2 text-red-600">{{emailError}}</p>
+
                   </div>
                 </div>
                 <div class="mt-2.5">
@@ -62,12 +63,12 @@
                       type="password"
                       formControlName="password"
                       placeholder="********"
-                      class="w-full"
+                      class="w-full "
                       [ngClass]="{
-                        'ng-invalid': loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty),
-                        'ng-dirty': loginForm.get('password')?.dirty
+                        'input-error': loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty),
                       }"
                     />
+                  <p class="h-2 text-red-600">{{passwordError}}</p>
                   </div>
                 </div>
                 <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 px-4 py-2 text-black">Reset Password</button>
@@ -91,7 +92,7 @@
                 </div>
               </div>
               <div class="mt-10">
-                <button
+                <button 
                   type="submit"
                   class="block float-right rounded-md bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 "
                 >Login
