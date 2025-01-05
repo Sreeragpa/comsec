@@ -24,11 +24,11 @@ export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
             }
         }
       }),
-      catchError((error:any)=>{
+      catchError((error:any)=>{        
         if(error.status === 401 || error.status === 403){
                // Token is invalid or expired, handle logout or token refresh
                authService.logout();
-               router.navigate(['/login']); // Redirect to login page
+               router.navigate(['login']) 
         }
         throw error;
       })
